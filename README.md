@@ -16,7 +16,7 @@
 ## Abstract/Summary 
 MusicBlocks is being refactored from scratch, so this gives us the opportunity to work on a new, improved version of the project with the latest tech stacks and enhanced performance.
 Spend the summer of 2021 working on MusicBlocks-v4 and has been an amazing experience.<br/>
-I'm very grateful to Sugarlabs for accepting my contributions and supporting me through the process of building the new musicBlock.<br/>
+I'm very grateful to Sugarlabs for accepting my contributions and supporting me through the process of building the new MusicBlocks.<br/>
 For the past four months, I, along with my peers, have been working tirelessly on four different major components, i.e. ArtBoard(canvas), palette, Menus and Blocks. I took the responsibility of building the palette section and functionality of drawing on the artBoard canvas. Also made sure that the performance of the new components build was better than the previous version of musicBlocks.<br />
 
 This is a description of my work on [MusicBlock Palette and Canvas](https://summerofcode.withgoogle.com/projects/#6238459439611904) during Google Summer Of Code 2021 with [Sugar Labs](https://github.com/sugarlabs/). This repository contains the work done, the code and the documentation written by me for the project.
@@ -26,7 +26,7 @@ This is a description of my work on [MusicBlock Palette and Canvas](https://summ
 
 ## Tech Stack
 
-The new musicBlock is build using `React + Typescript`. This decision was taken to improve the performance and the code quality of the project. React virtual dom helps improve the performance, and strict type checking using Typescript over javascript helps improve the code quality.<br/>
+The new MusicBlocks is build using `React + Typescript`. This decision was taken to improve the performance and the code quality of the project. React virtual dom helps improve the performance, and strict type checking using Typescript over javascript helps improve the code quality.<br/>
 The palette was build using functional components and various hooks. <br/>
 [p5](https://p5js.org/) library is used to create and handle canvases. `p5.js` provides many inbuilt functions to draw graphics and turtles over the canvas. `p5.js` has several predefined functions which we can use to draw anything we want. The most basic (and necessary) functions are the `setup()` and `draw()` functions.  A simple canvas using p5 in react can be created like this.
 
@@ -130,7 +130,7 @@ The user can define the angle, the distance and the speed of the turtle. The det
 
 The two models `artBoardDraw.ts` and `turtle.ts` store the canvas and turtles created, respectively.They are called by the artBoardSketch.tsx and artBoardTurtle.tsx respectively. For more detail on the structure of artBoard model you can see the full documentation [here](./ArtBoardModel.md).
 
-
+## Contributions
 
  PR | Description
  ------ | ------ 
