@@ -1,5 +1,5 @@
 # Google Summer Of Code 2021 - Final Work Product
-![](docs/img/artBoardOverview.png) 
+![](images/logo.png) 
 ### sugarlabs/[musicblocks](https://github.com/sugarlabs/musicblocks-v4) 
 ### author:joykirat ([Joykirat Singh](https://github.com/joykirat18)) 
 <br/>
@@ -14,10 +14,10 @@
 
 
 ## Abstract/Summary 
-MusicBlocks is being refactored from scratch, so this gives us the opportunity to work on a new improved version of the project, with the lastest tech stacks and enhanced performance.
-Spending the summer of 2021 working on MusicBlocks-v4 and it has been an amazing experience.<br/>
-I'm very grateful to Sugarlabs for accepting my contributions and supporting me through the process building the new musicBlock.<br/>
-For the past 4 months I, along with my peers, have been working tirelessly on 4 different major components i.e ArtBoard(canvas), palette, Menus and Blocks. I took the responsibilities of building the palette section and functionality of drawing on the artBoard canvas. Also made sure that the performance of the new components build was better then the previous version of musicBlocks.<br />
+MusicBlocks is being refactored from scratch, so this gives us the opportunity to work on a new, improved version of the project with the latest tech stacks and enhanced performance.
+Spend the summer of 2021 working on MusicBlocks-v4 and has been an amazing experience.<br/>
+I'm very grateful to Sugarlabs for accepting my contributions and supporting me through the process of building the new musicBlock.<br/>
+For the past four months, I, along with my peers, have been working tirelessly on four different major components, i.e. ArtBoard(canvas), palette, Menus and Blocks. I took the responsibility of building the palette section and functionality of drawing on the artBoard canvas. Also made sure that the performance of the new components build was better than the previous version of musicBlocks.<br />
 
 This is a description of my work on [MusicBlock Palette and Canvas](https://summerofcode.withgoogle.com/projects/#6238459439611904) during Google Summer Of Code 2021 with [Sugar Labs](https://github.com/sugarlabs/). This repository contains the work done, the code and the documentation written by me for the project.
 
@@ -26,9 +26,9 @@ This is a description of my work on [MusicBlock Palette and Canvas](https://summ
 
 ## Tech Stacks
 
-The new musicBlock is build using React + Typescript. This discussion was taken to improve the performance and the code quality of the project. React virtual dom helps in improve the performanceand strict type checking using typescript over javascript helps in improving the code quality.<br/>
+The new musicBlock is build using React + Typescript. This decision was taken to improve the performance and the code quality of the project. React virtual dom helps improve the performance, and strict type checking using Typescript over javascript helps improve the code quality.<br/>
 The palette was build using functional components and various hooks. <br/>
-[p5](https://p5js.org/) library is used to create and handle canvases. p5 provides many inbuilt functions to draw graphics and control over the canvas.p5.js has a number of predefined functions which we can use to draw anything we want. The most basic (and necessary) functions are the setup() and draw() functions.  A simple canvas using p5 in react can be created like this.
+[p5](https://p5js.org/) library is used to create and handle canvases. p5.js provides many inbuilt functions to draw graphics and control over the canvas.p5.js has several predefined functions which we can use to draw anything we want. The most basic (and necessary) functions are the setup() and draw() functions.  A simple canvas using p5 in react can be created like this.
 
 [`p5 Canvas is created in instance mode.`](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
 
@@ -47,42 +47,44 @@ The palette was build using functional components and various hooks. <br/>
         };
     };
 
-It creates a canvas as p5 element with a circle on top of it. There are two important functions `setup` and `draw`. The code inside the `draw()` function runs continuously from top to bottom until the program is stopped. The setup function runs only once in the beginning. 
+It creates a canvas as a p5 element with a circle on top of it. There are two essential functions `setup` and `draw`. The code inside the `draw()` function runs continuously from top to bottom until the program is stopped. The setup function runs only once in the beginning. 
 
-By using React we get all the advantages of declarative code with clean, reusable and reactive components. All the while still maintaining the easy to use abstractions exposed by p5. The above sketch defintion is called inside a react component. 
+Using React, we get all the advantages of declarative code with clean, reusable and reactive components. All the while still maintaining the easy to use abstractions exposed by p5. The above sketch definition is called inside a react component. 
 
 ## Work Progress
 
-During the community Bonding Period, we brainstromed to the decide the tech stack we were going to use and the architecture of the project. We decided to go for MVVM architecture. Model — View — ViewModel (MVVM) is the industry-recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application. 
+During the Community Bonding Period, we brainstormed to decide the tech stack we were going to use and the project's architecture. We decided to go for MVVM architecture. Model — View — ViewModel (MVVM) is the industry-recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application. 
 
 The separate code layers of MVVM are:
 <ul>
 <li>
 Model: This layer is responsible for the abstraction of the data sources. Model and ViewModel work together to get and save the data.
 <li>
-View: The purpose of this layer is to inform the ViewModel about the user’s action. This layer observes the ViewModel and does not contain any kind of application logic.
+View: The purpose of this layer is to inform the ViewModel about the user's action. This layer observes the ViewModel and does not contain any kind of application logic.
 <li>
 ViewModel: It exposes those data streams which are relevant to the View. Moreover, it servers as a link between the Model and the View.
 </ul>
 
-My 10 weeks of work on the project was divided into 2 parts: **Building the palette**, **Building artBoard Functionlity**. 
+My ten weeks of work on the project were divided into **Building the palette** and **Building artBoard Functionality**. 
 
 &nbsp;
 
 ## Building the palette
 
-The palette is a crucial part of MusicBlock. It is were all the blocks are divided into different sections and the user can select the different blocks.
+The palette is a crucial part of MusicBlock. All the blocks are divided into different sections, and the user can select the different blocks.
 
-MVVM architecture is followed to build the pallette.
+MVVM architecture is followed to build the palette.
 
 ![PaletteStructure](images/paletteStructure.png)
 
-The viewModels are palette.ts and PaletteBlock.ts. THe palette.ts is responsible for showing the palettes sections and subSections. The palette.ts viewModel calls the palette.tsx view to render the subSections. 
+The view models are palette.ts and PaletteBlock.ts.
 
-The paletteBlocks is used to show the PopUp containing all the blocks. It divides the block into low Shelf and high Shelf blocks.
+The palette.ts is responsible for showing the palettes sections and subSections. The palette.ts ViewModel calls the palette.tsx view to render the subSections. 
+
+The paletteBlocks is used to show the PopUp containing all the blocks. It divides the block into low Shelf and High Shelf blocks.
 
 <ol>
-<li> High Shelf Blocks: The high shelf blocks contain the blocks mostly used by the user and can be easily found.
+<li> High Shelf Blocks: The high shelf blocks contain the users mostly used and can be easily found.
 <li> Low Shelf Blocks: The low shelf blocks contain blocks that are rarely used and can be grouped with other blocks.
 </ol>
 
@@ -90,7 +92,7 @@ PopUp.tsx is the view for the PopUp and is responsible for how the low and high 
 
 ![PaletteViewStructure](images/viewStructure.png)
 
-For more details on the structure of the palette you can see the full documentation [here](./Palette.md).
+For more details on the structure of the palette, you can see the complete documentation [here](./Palette.md).
 
 ![Palette](images/paletteDemo.gif)
 
@@ -104,11 +106,11 @@ The artBoard is the canvas where the user can draw using the turtle. The user ca
 <li> Move turtle in an arc
 <li> Draw and drop turtle
 </ul>
-The artBoard is build React + p5.js. The artBoard is divided to 2 parts, artBoardSketch.tsx and artBoardTurtle.tsx . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles then N artBoardSketch will be created and N turtles will be rendered on the artBoardTurtle canvas. So in total N + 1 canvases will be created.
+The artBoard is built using React + p5.js. The artBoard is divided to 2 parts, artBoardSketch.tsx and artBoardTurtle.tsx . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles, N artBoardSketch will be created, and N turtles will be rendered on the artBoardTurtle canvas. So in total, N + 1 canvases will be created.
 
 ![artBoardStructure](images/artBoardStructure.png)
 
-The user can define the angle, the disctance and the speed of the turtle.The detail on the functionality and the structure of the artBoard you can see the full documentation [here](./artBoardView.md).
+The user can define the angle, the distance and the speed of the turtle. The detail on the functionality and the structure of the artBoard can be seen in the complete documentation [here](./artBoardView.md).
 
 ### Moving turtle forward
 
@@ -124,17 +126,17 @@ The user can define the angle, the disctance and the speed of the turtle.The det
 
 
 
-The 2 models `artBoardDraw.ts` and `turtle.ts` are used to store the canvas and turtles created respectively.They are called by the artBoardSketch.tsx and artBoardTurtle.tsx respectively. For more detail on the structure of artBoard model you can see the full documentation [here](./ArtBoardModel.md).
+The two models `artBoardDraw.ts` and `turtle.ts` store the canvas and turtles created, respectively.They are called by the artBoardSketch.tsx and artBoardTurtle.tsx respectively. For more detail on the structure of artBoard model you can see the full documentation [here](./ArtBoardModel.md).
 
 
 
  PR | Description
  ------ | ------ 
-[70](https://github.com/sugarlabs/musicblocks-v4/pull/70) | The MVVM architecture is used to build the palette. The basic styling is completed and blocks are divided into high and low shelf.
-[74](https://github.com/sugarlabs/musicblocks-v4/pull/74) | The move functionality of the turtle is added. The  user can move the turtle around the canvas and also specifify the number of turtles to render on canvas.
-[85](https://github.com/sugarlabs/musicblocks-v4/pull/85) | A lot of props were being passed around the views, so wrapped the artBoard in a context API layer to clean up some of the code.
-[86](https://github.com/sugarlabs/musicblocks-v4/pull/86) | The turtle can be dragged and dropped on the canvas. The top mose turtle is always get priority while 2 turtles are overlapping. 
-[90](https://github.com/sugarlabs/musicblocks-v4/pull/90) | Disabled mouse events on the turtle, when it is moving. Due to this only stationary turtles can be dragged and dropped. 
+[70](https://github.com/sugarlabs/musicblocks-v4/pull/70) | The MVVM architecture is used to build the palette. The basic styling is completed, and blocks are divided into high and low Shelf.
+[74](https://github.com/sugarlabs/musicblocks-v4/pull/74) | The move functionality of the turtle is added. The user can move the turtle around the canvas and specify the number of turtles rendered on canvas.
+[85](https://github.com/sugarlabs/musicblocks-v4/pull/85) | Many props were being passed around the views, so wrapped the artBoard in a context API layer to clean up some of the code.
+[86](https://github.com/sugarlabs/musicblocks-v4/pull/86) | The turtle can be dragged and dropped on the canvas. The topmost turtle always gets priority while two turtles are overlapping. 
+[90](https://github.com/sugarlabs/musicblocks-v4/pull/90) | Disabled mouse events on the turtle when it is moving. Due to this, only stationary turtles can be dragged and dropped. 
 [91](https://github.com/sugarlabs/musicblocks-v4/pull/91) | ArtBoard Canvas Documentation.
 [92](https://github.com/sugarlabs/musicblocks-v4/pull/92) | Palette Documentation.
 
@@ -150,8 +152,9 @@ The 2 models `artBoardDraw.ts` and `turtle.ts` are used to store the canvas and 
 
 ---
 &nbsp;
+## Acknowledgements
 
-On a final note, I am extremely grateful to my mentors, [Anindya Kundu](https://github.com/meganindya), [Walter Bender](https://github.com/walterbender), [Peace Ojemeh](https://github.com/perriefidelis), and [Devin Ulibarri](https://github.com/pikurasa). I am also very thankful for their motivation which helped me in improving the quality of my code and helping me improve my soft skills.
+On a final note, I am incredibly grateful to my mentors, [Anindya Kundu](https://github.com/meganindya), [Walter Bender](https://github.com/walterbender), [Peace Ojemeh](https://github.com/perriefidelis), and [Devin Ulibarri](https://github.com/pikurasa). I am also very thankful for their motivation which helped me improve the quality of my code and helping me improve my soft skills.
 
 Thanks to [Sugarlabs](https://www.sugarlabs.org/) and [MusicBlocks](https://musicblocks.sugarlabs.org/) for this great opportunity.
 
