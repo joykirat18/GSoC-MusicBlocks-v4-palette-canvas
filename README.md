@@ -24,11 +24,11 @@ This is a description of my work on [MusicBlock Palette and Canvas](https://summ
 ---
 &nbsp;
 
-## Tech Stacks
+## Tech Stack
 
-The new musicBlock is build using React + Typescript. This decision was taken to improve the performance and the code quality of the project. React virtual dom helps improve the performance, and strict type checking using Typescript over javascript helps improve the code quality.<br/>
+The new musicBlock is build using `React + Typescript`. This decision was taken to improve the performance and the code quality of the project. React virtual dom helps improve the performance, and strict type checking using Typescript over javascript helps improve the code quality.<br/>
 The palette was build using functional components and various hooks. <br/>
-[p5](https://p5js.org/) library is used to create and handle canvases. p5.js provides many inbuilt functions to draw graphics and control over the canvas.p5.js has several predefined functions which we can use to draw anything we want. The most basic (and necessary) functions are the setup() and draw() functions.  A simple canvas using p5 in react can be created like this.
+[p5](https://p5js.org/) library is used to create and handle canvases. `p5.js` provides many inbuilt functions to draw graphics and turtles over the canvas. `p5.js` has several predefined functions which we can use to draw anything we want. The most basic (and necessary) functions are the `setup()` and `draw()` functions.  A simple canvas using p5 in react can be created like this.
 
 [`p5 Canvas is created in instance mode.`](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
 
@@ -53,7 +53,7 @@ Using React, we get all the advantages of declarative code with clean, reusable 
 
 ## Work Progress
 
-During the Community Bonding Period, we brainstormed to decide the tech stack we were going to use and the project's architecture. We decided to go for MVVM architecture. Model — View — ViewModel (MVVM) is the industry-recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application. 
+During the Community Bonding Period, we brainstormed to decide the tech stack we were going to use and the project's architecture. We decided to go for `MVVM architecture`. Model — View — ViewModel (MVVM) is the industry-recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application. 
 
 The separate code layers of MVVM are:
 <ul>
@@ -71,7 +71,7 @@ My ten weeks of work on the project were divided into **Building the palette** a
 
 ## Building the palette
 
-The palette is a crucial part of MusicBlock. All the blocks are divided into different sections, and the user can select the different blocks.
+The palette is a crucial part of MusicBlock. All the blocks are divided into different sections, and the user can select different blocks.
 
 MVVM architecture is followed to build the palette.
 
@@ -106,7 +106,7 @@ The artBoard is the canvas where the user can draw using the turtle. The user ca
 <li> Move turtle in an arc
 <li> Draw and drop turtle
 </ul>
-The artBoard is built using React + p5.js. The artBoard is divided to 2 parts, artBoardSketch.tsx and artBoardTurtle.tsx . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles, N artBoardSketch will be created, and N turtles will be rendered on the artBoardTurtle canvas. So in total, N + 1 canvases will be created.
+The artBoard is built using React + p5.js. The artBoard is divided to 2 parts, artBoardSketch.tsx and artBoardTurtle.tsx . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles, N artBoardSketch will be created, and N turtles will be rendered on the artBoardTurtle canvas. So in total, N + 1 canvases will be created. <br/>
 
 ![artBoardStructure](images/artBoardStructure.png)
 
