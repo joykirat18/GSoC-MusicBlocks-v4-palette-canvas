@@ -77,9 +77,9 @@ MVVM architecture is followed to build the palette.
 
 ![PaletteStructure](images/paletteStructure.png)
 
-The view models are palette.ts and PaletteBlock.ts.
+The view models are `palette.ts` and `PaletteBlock.ts`.
 
-The palette.ts is responsible for showing the palettes sections and subSections. The palette.ts ViewModel calls the palette.tsx view to render the subSections. 
+The `palette.ts` is responsible for showing the palettes sections and subSections. The `palette.ts` ViewModel calls the `palette.tsx` view to render the subSections. 
 
 The paletteBlocks is used to show the PopUp containing all the blocks. It divides the block into low Shelf and High Shelf blocks.
 
@@ -88,7 +88,7 @@ The paletteBlocks is used to show the PopUp containing all the blocks. It divide
 <li> Low Shelf Blocks: The low shelf blocks contain blocks that are rarely used and can be grouped with other blocks.
 </ol>
 
-PopUp.tsx is the view for the PopUp and is responsible for how the low and high shelf blocks are shown.
+`PopUp.tsx` is the view for the PopUp and is responsible for how the low and high shelf blocks are shown.
 
 ![PaletteViewStructure](images/viewStructure.png)
 
@@ -106,7 +106,7 @@ The artBoard is the canvas where the user can draw using the turtle. The user ca
 <li> Move turtle in an arc
 <li> Draw and drop turtle
 </ul>
-The artBoard is built using React + p5.js. The artBoard is divided to 2 parts, artBoardSketch.tsx and artBoardTurtle.tsx . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles, N artBoardSketch will be created, and N turtles will be rendered on the artBoardTurtle canvas. So in total, N + 1 canvases will be created. <br/>
+The artBoard is built using React + p5.js. The artBoard is divided to 2 parts, `artBoardSketch.tsx` and `artBoardTurtle.tsx` . The artBoardSketch is responsible for drawing the lines on the canvas, and the artBoardTurtle renders the turtle on canvas. Each turtle is linked to a canvas. If the user wants to create N turtles, N artBoardSketch will be created, and N turtles will be rendered on the artBoardTurtle canvas. So in total, N + 1 canvases will be created. <br/>
 
 ![artBoardStructure](images/artBoardStructure.png)
 
