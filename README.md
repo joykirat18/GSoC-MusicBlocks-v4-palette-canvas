@@ -32,6 +32,7 @@ The palette was build using functional components and various hooks. <br/>
 
 [`p5 Canvas is created in instance mode.`](https://github.com/processing/p5.js/wiki/Global-and-instance-mode)
 
+```
     const Sketch = (sketch: P5Instance): void => {
         let demoCanvas: p5.Element;
 
@@ -46,6 +47,7 @@ The palette was build using functional components and various hooks. <br/>
             sketch.ellipse(50, 50, 80, 80);
         };
     };
+```
 
 It creates a canvas as a p5 element with a circle on top of it. There are two essential functions `setup` and `draw`. The code inside the `draw()` function runs continuously from top to bottom until the program is stopped. The setup function runs only once in the beginning. 
 
